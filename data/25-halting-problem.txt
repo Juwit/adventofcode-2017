@@ -1,0 +1,26 @@
+module.exports = {
+    "A": {
+        "0": {"write": "1", "move": "right", "nextState": "B"},
+        "1": {"write": "0", "move": "left", "nextState": "C"}
+    },
+    "B": {
+        "0": {"write": "1", "move": "left", "nextState": "A"},
+        "1": {"write": "1", "move": "right", "nextState": "C"}
+    },
+    "C": {
+        "0": {"write": "1", "move": "right", "nextState": "A"},
+        "1": {"write": "0", "move": "left", "nextState": "D"}
+    },
+    "D": {
+        "0": {"write": "1", "move": "left", "nextState": "E"},
+        "1": {"write": "1", "move": "left", "nextState": "C"}
+    },
+    "E": {
+        "0": {"write": "1", "move": "right", "nextState": "F"},
+        "1": {"write": "1", "move": "right", "nextState": "A"}
+    },
+    "F": {
+        "0": {"write": "1", "move": "right", "nextState": "A"},
+        "1": {"write": "1", "move": "right", "nextState": "E"}
+    }
+}
