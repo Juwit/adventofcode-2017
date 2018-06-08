@@ -1,7 +1,8 @@
 module.exports = {
     inverseCaptcha,
     nextSimple,
-    nextHalfway
+    nextHalfway,
+    solve
 };
 
 /**
@@ -43,4 +44,16 @@ function inverseCaptcha(data, next){
         }
     }
     return sum;
+}
+
+function solve(){
+    let myInput = require("fs").readFileSync("data/01-inverse-captcha.txt").toString();
+
+    const part1 = inverseCaptcha(myInput, nextSimple);
+    const part2 = inverseCaptcha(myInput, nextHalfway);
+
+    console.log("--- Day 1: Inverse Captcha ---");
+    console.log(`Puzzle answer : ${part1}`);
+    console.log("--- Part Two ---");
+    console.log(`Puzzle answer : ${part2}`);
 }

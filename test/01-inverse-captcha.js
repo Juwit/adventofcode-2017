@@ -2,11 +2,9 @@ let expect = require("chai").expect;
 
 let {inverseCaptcha, nextSimple, nextHalfway} = require("../src/01-inverse-captcha");
 
-let myInput = require("../data/01-inverse-captcha.txt");
+describe("--- Day 1: Inverse Captcha ---", () => {
 
-describe("inverse-captcha", () => {
-
-    describe("part-one", () => {
+    describe("--- Part One ---", () => {
 
         it("should work with first exemple", () => {
             let data = "1122";
@@ -32,14 +30,9 @@ describe("inverse-captcha", () => {
             expect(inverseCaptcha(data, nextSimple)).to.equal(result);
         });
 
-        it("should work for my input", () => {
-            let data = myInput;
-            let result = inverseCaptcha(data, nextSimple);
-            console.log(result);
-        })
     });
 
-    describe("part-two", () => {
+    describe("--- Part Two ---", () => {
 
         it("should work with first exemple", () => {
             let data = "1212";
@@ -70,12 +63,6 @@ describe("inverse-captcha", () => {
             let result = 4;
             expect(inverseCaptcha(data, nextHalfway)).to.equal(result);
         });
-
-        it("should work for my input", () => {
-            let data = myInput;
-            let result = inverseCaptcha(data, nextHalfway);
-            console.log(result);
-        })
     })
 
 });
