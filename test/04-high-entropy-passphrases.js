@@ -4,9 +4,9 @@ let myInput = require("fs").readFileSync("data/04-high-entropy-passphrases.txt")
 
 let {hasNoDuplicate, hasNoAnagram} = require("../src/04-high-entropy-passphrases");
 
-describe("high-entropy-passphrases", () => {
+describe("--- Day 4: High-Entropy Passphrases ---", () => {
 
-    describe("part-one", () => {
+    describe("--- Part One ---", () => {
 
         it("should validate aa bb cc dd ee", () => {
             let pass = "aa bb cc dd ee";
@@ -33,15 +33,9 @@ describe("high-entropy-passphrases", () => {
             expect(hasNoDuplicate(pass)).to.be.true;
         });
 
-        it("should give the answer", () => {
-            let allPassphrases = myInput.split(/\n/);
-            let valid = allPassphrases.filter(hasNoDuplicate).length;
-            console.log(valid);
-        });
-
     });
 
-    describe("part-two", () => {
+    describe("--- Part Two ---", () => {
 
         it("should validate abcde fghij", () => {
            expect(hasNoAnagram("abcde fghij")).to.be.true;
@@ -63,11 +57,6 @@ describe("high-entropy-passphrases", () => {
             expect(hasNoAnagram("oiii ioii iioi iiio")).to.be.false;
         });
 
-        it("should give the answer", () => {
-            let allPassphrases = myInput.split(/\n/);
-            let valid = allPassphrases.filter(hasNoAnagram).length;
-            console.log(valid);
-        });
     });
 
 });

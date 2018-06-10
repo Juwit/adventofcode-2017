@@ -1,6 +1,7 @@
 module.exports = {
     hasNoDuplicate,
-    hasNoAnagram
+    hasNoAnagram,
+    solve
 };
 
 function hasNoDuplicate(passphrase) {
@@ -24,4 +25,19 @@ function hasNoAnagram(passphrase) {
         return letters;
     }).join(" ");
     return hasNoDuplicate(words);
+}
+
+function solve(){
+    const myInput = require("fs").readFileSync("data/04-high-entropy-passphrases.txt").toString();
+
+    const allPassphrases = myInput.split(/\n/);
+
+    const part1 = allPassphrases.filter(hasNoDuplicate).length;
+    const part2 = allPassphrases.filter(hasNoAnagram).length;
+
+    console.log("--- Day 4: High-Entropy Passphrases ---");
+    console.log(`Puzzle answer : ${part1}`);
+    console.log("--- Part Two ---");
+    console.log(`Puzzle answer : ${part2}`);
+    console.log();
 }
