@@ -4,9 +4,9 @@ let {checksum, maxAndMinDifference, divideEnvenlyDivisible} = require("../src/02
 
 let myInput = require("fs").readFileSync("data/02-corruption-checksum.txt").toString();
 
-describe("corruption-checksum", () => {
+describe("--- Day 2: Corruption Checksum ---", () => {
 
-    describe("part-one", () => {
+    describe("--- Part One ---", () => {
 
         it("should work with the exemple", () => {
             let data = `5	1	9	5
@@ -16,12 +16,9 @@ describe("corruption-checksum", () => {
             expect(checksum(data, maxAndMinDifference)).to.equal(result);
         });
 
-        it("should work for my input", () => {
-            console.log(checksum(myInput, maxAndMinDifference));
-        })
     });
 
-    describe("part-two", () => {
+    describe("--- Part Two ---", () => {
 
         it("should work on exemple's first line", () => {
             expect(divideEnvenlyDivisible([5,9,2,8])).to.equal(4);
@@ -41,11 +38,6 @@ describe("corruption-checksum", () => {
 3	8	6	5`;
             expect(checksum(data, divideEnvenlyDivisible)).to.equal(9);
         });
-
-        it("should work with my input", () => {
-            console.log(checksum(myInput, divideEnvenlyDivisible));
-        });
-
 
     });
 

@@ -1,7 +1,8 @@
 module.exports = {
     checksum,
     maxAndMinDifference,
-    divideEnvenlyDivisible
+    divideEnvenlyDivisible,
+    solve
 };
 
 function checksum(data, func){
@@ -36,4 +37,16 @@ function divideEnvenlyDivisible(numbers){
         })
     });
     return result;
+}
+
+function solve(){
+    let myInput = require("fs").readFileSync("data/02-corruption-checksum.txt").toString();
+
+    const part1 = checksum(myInput, maxAndMinDifference);
+    const part2 = checksum(myInput, divideEnvenlyDivisible);
+
+    console.log("--- Day 2: Corruption Checksum ---");
+    console.log(`Puzzle answer : ${part1}`);
+    console.log("--- Part Two ---");
+    console.log(`Puzzle answer : ${part2}`);
 }
