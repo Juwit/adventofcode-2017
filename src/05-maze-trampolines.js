@@ -18,6 +18,7 @@ function solve(){
     console.log(`Puzzle answer : ${part1}`);
     console.log("--- Part Two ---");
     console.log(`Puzzle answer : ${part2}`);
+    console.log();
 }
 
 
